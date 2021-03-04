@@ -7,4 +7,18 @@ The file named DAS1_TF is the pdf of jupeter notebook where we got results by us
 
 # Project Milestones were Being Discussed and set in the meeting
 
-Following are the milestones set for** Evaluation 1 **and that will be held on **11th March 2021**.
+Following are the milestones set for **Evaluation 1** and that will be held on **11th March 2021**.
+
+1. MATLAB and Ultrasound Field-II Toolbox based Delay_and_ Sum (DAS) Beamforming Simulation
+2. Image Quality Matrix (Computational time)
+3. Minimum Variance Beamformer using MATLAB with Quality Matrix and Computational Time
+
+Following are the milestones set for **Evaluation 2** and that will be held on **30th March 2021**.
+
+4. Neural Network based Minimum Variance  Weight Calculation (Pyhton or MATLAB)
+5. Quality Matrix 
+6. Improve the Network
+
+Final Evalution  will be held on **15th April 2021**
+
+7. Write-up 
