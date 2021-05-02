@@ -7,6 +7,8 @@ clear all;
 close all;
 
 tic
+
+
 %% field II initialisation
 % 
 % Next, we initialize the field II toolbox. Again, this only works if the 
@@ -21,10 +23,10 @@ field_init;
 %% Transducer definition  128-element linear array transducer
 % 
 % Our next step is to define the ultrasound transducer array we are using.
-% For this experiment, we shall use the 96 element
+% For this experiment, we shall use the 128 element
 % Transducer and set our parameters to match it.
     
-f0                      =   5e6;              % Transducer center frequency [Hz]
+f0                      =   4e6;              % Transducer center frequency [Hz]
 c                       =   1540;             % Speed of sound [m/s]
 fs                      =   100e6;            % Sampling frequency [Hz]
 Ts                      =   1/fs;             % Sampling step [s]
@@ -43,9 +45,9 @@ N_elements              =   128;               % Number of elements
 %% 
 %%%%%%%%%%%%Initial electronic focus%%%%%%%%%%%%%%%
 
-focus=[0 0 100]; 
+focus =[0 0 100]; 
 
-Th = xdc_linear_array (N_elements, width, height, kerf, 1,1, focus);
+Th  = xdc_linear_array (N_elements, width, height, kerf, 1,1, focus);
 Th2 = xdc_linear_array (N_elements, width, height, kerf, 1,1, focus);
 
 BW=2*f0;
@@ -214,20 +216,20 @@ figure;bar(c,a)
 
 % First we need to put our images in a different data struct that the 
 % measure contrast function expects
-images = env_dB;
+%images = env_dB;
 
 
 % Define the coordinates of the regions used to measure contrast
-xc_nonecho = 0;      % Center of cyst in X
-zc_nonecho = 30;      % Center of cyst in Z
-r_nonecho = 0.3;        % Radi of the circle in the cyst
-r_speckle_inner = 0.5;  % Radi of the inner circle defining speckle region
-r_speckle_outer = 0.6;    % Radi of the outer circle defining speckle region
+%xc_nonecho = 0;      % Center of cyst in X
+%zc_nonecho = 30;      % Center of cyst in Z
+%r_nonecho = 0.3;        % Radi of the circle in the cyst
+%r_speckle_inner = 0.5;  % Radi of the inner circle defining speckle region
+%r_speckle_outer = 0.6;    % Radi of the outer circle defining speckle region
 
-axi = gca;
-viscircles(axi,[xc_nonecho,zc_nonecho],r_nonecho,'EdgeColor','r');
-viscircles(axi,[xc_nonecho,zc_nonecho],r_speckle_inner,'EdgeColor','y');
-viscircles(axi,[xc_nonecho,zc_nonecho],r_speckle_outer,'EdgeColor','y');
+%axi = gca;
+%viscircles(axi,[xc_nonecho,zc_nonecho],r_nonecho,'EdgeColor','r');
+%viscircles(axi,[xc_nonecho,zc_nonecho],r_speckle_inner,'EdgeColor','y');
+%viscircles(axi,[xc_nonecho,zc_nonecho],r_speckle_outer,'EdgeColor','y');
 
 % Call the "tool" to measure the contrast
 %[CR] = measure_contrast_ratio(env_dB,images,xc_nonecho, zc_nonecho,r_nonecho,r_speckle_inner,r_speckle_outer);
